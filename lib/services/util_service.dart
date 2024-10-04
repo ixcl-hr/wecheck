@@ -61,10 +61,6 @@ class UtilService {
     String? token = prefs.getString('token');
     String? lang = prefs.getString('lang');
 
-    if (lang == null) {
-      setSharedPreferencesWithPrefs(prefs, "lang", language);
-    }
-
     if (token != null && token.isNotEmpty) {
       setSharedPreferencesWithPrefs(prefs, "isLoadingToken", "Y");
 
@@ -85,12 +81,7 @@ class UtilService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? lang = prefs.getString('lang');
 
-    if (lang == null) {
-      lang = language;
-      setSharedPreferencesWithPrefs(prefs, "lang", language);
-    }
-
-    return lang;
+    return lang ?? 'en';
   }
 
   static Future<List<dynamic>?> getListLanguage() async {
@@ -158,11 +149,7 @@ class UtilService {
   static Future<AppInfo?> getAppInfo() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? appversion = prefs.getString('appversion');
-    if (appversion != null) {
-      return AppInfo.fromJson(convert.jsonDecode(appversion.toString()));
-    } else {
-      return null;
-    }
+    return AppInfo.fromJson(convert.jsonDecode(appversion.toString()));
   }
 
   static String getStatusName(statusid) {
@@ -184,8 +171,8 @@ class UtilService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? val = prefs.getString('installTime');
 
-    if (val != null && DateTime.tryParse(val) != null) {
-      return DateTime.parse(val);
+    if (DateTime.tryParse(val ?? "") != null) {
+      return DateTime.parse(val ?? "");
     } else {
       return null;
     }
@@ -194,8 +181,8 @@ class UtilService {
   static DateTime? getInstallTimeFromPrefs(SharedPreferences prefs) {
     String? val = prefs.getString('installTime');
 
-    if (val != null && DateTime.tryParse(val) != null) {
-      return DateTime.parse(val);
+    if (DateTime.tryParse(val ?? "") != null) {
+      return DateTime.parse(val ?? "");
     } else {
       return null;
     }
@@ -226,7 +213,7 @@ class UtilService {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? authen = prefs.getString('authen');
 
-    return authen == null || authen.isEmpty
+    return authen!.isEmpty
         ? null
         : Authen.fromJson(convert.jsonDecode(authen.toString()));
   }

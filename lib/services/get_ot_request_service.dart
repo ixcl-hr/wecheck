@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import '../constants/config.dart';
 
@@ -51,7 +50,7 @@ class GetOTRequestService {
     }
   }
 
-  unApproveOT({required Profile profile, @required listRequest}) async {
+  unApproveOT({required Profile profile, required listRequest}) async {
     var payload = convert.jsonEncode({
       "companyname": profile.companyname,
       "employeeid": profile.employeeid,

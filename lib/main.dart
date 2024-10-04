@@ -249,11 +249,9 @@ class _SplashScreenState extends State<SplashScreen> {
       DateTime? oldInstallTime =
           !kIsWeb ? UtilService.getInstallTimeFromPrefs(prefs) : newInstallTime;
 
-      if (sessionId == null ||
-          oldInstallTime == null ||
+      if (oldInstallTime == null ||
           oldInstallTime.compareTo(newInstallTime) < 0 ||
-          token == null ||
-          token.isEmpty) valid = false;
+          token!.isEmpty) valid = false;
 
       if (valid) {
         Navigator.pushNamedAndRemoveUntil(

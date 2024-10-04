@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import '../constants/config.dart';
 import '../models/GetAbsentQuotaModel.dart';
 import 'package:http/http.dart' as http;
@@ -9,7 +8,7 @@ import '../models/profile.dart';
 class GetAbsentQuotaService {
   final profile;
   GetAbsentQuotaService({
-    @required this.profile,
+    required this.profile,
   });
 
   Future getData({required Profile profile, required int selectedYear}) async {
