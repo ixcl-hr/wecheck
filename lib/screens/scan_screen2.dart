@@ -1,30 +1,16 @@
-import 'dart:convert' as convert;
 // import 'dart:html';
-import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/foundation.dart' show kDebugMode, kIsWeb;
 import 'package:geolocator/geolocator.dart';
 import 'package:intl/intl.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
-import 'package:mime/mime.dart';
-import 'package:path/path.dart' as path;
-import '../constants/config.dart';
-import '../models/convert_date.dart';
 import '../models/history.dart';
 import '../models/location.dart';
 import '../models/profile.dart';
 import '../pages/map_view_page.dart';
-import '../pages/scan_qrcode_page.dart';
-import '../services/convert_time_service.dart';
-import '../services/current_location_service.dart';
 import '../services/history_service.dart';
 import '../services/location_service.dart';
-import '../services/scan_service.dart';
 import '../services/type_scan_service.dart';
 import '../services/util_service.dart';
-import '../widgets/attach_file_web_widget.dart';
-import '../widgets/attach_file_widget.dart';
-import '../widgets/qrcode_scan_widget.dart';
 
 class ScanScreen2 extends StatefulWidget {
   const ScanScreen2({super.key});

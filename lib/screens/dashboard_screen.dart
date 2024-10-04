@@ -2,7 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:wecheck/screens/scan_screen.dart';
-import 'package:wecheck/screens/scan_screen2.dart';
 import '../screens/ot_screen.dart';
 import '../screens/absent_screen.dart';
 import '../screens/home_screen.dart';

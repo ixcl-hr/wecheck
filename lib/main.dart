@@ -4,22 +4,18 @@ import 'dart:io';
 
 import 'package:app_install_date/app_install_date.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
-import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'package:permission_handler/permission_handler.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:wecheck/constants/config.dart';
 import 'package:wecheck/screens/dashboard_screen.dart';
 import 'package:wecheck/screens/register_screen.dart';
 import 'package:wecheck/services/util_service.dart';
-
-import 'package:location/location.dart';
 
 import 'package:flutter_app_badger/flutter_app_badger.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';

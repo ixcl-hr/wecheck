@@ -1,14 +1,11 @@
 // import 'dart:html';
 import 'dart:convert' as convert;
 import 'dart:io';
-import 'dart:ui';
 import 'package:app_install_date/app_install_date.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:geocode/geocode.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 // import 'package:permission_handler/permission_handler.dart';
@@ -26,8 +23,6 @@ import '../services/current_location_service.dart';
 import 'package:url_launcher/url_launcher.dart';
 import '../services/reToken_service.dart';
 import '../services/validateSessionId_service.dart';
-
-import 'package:location/location.dart' as loc;
 
 class UtilService {
   static Future<SharedPreferences> getSharedPreferences() async {
